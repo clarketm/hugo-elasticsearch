@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/hugo-elasticsearch
 
     environment:
-      - NODE_ENV: production
+      - NODE_ENV: test
 
     steps:
       - checkout
