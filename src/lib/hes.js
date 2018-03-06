@@ -45,10 +45,6 @@ class HugoElasticsearch {
     if (argv['n']) this.setIndexName(argv['n']);
     if (argv['name']) this.setIndexName(argv['name']);
 
-    this.setLanguageConfig(this.language, this.delimiter);
-    if (this.indexName) this.setIndexMetaIndex(this.indexName);
-
-    this.baseDir = path.dirname(this.input);
   }
 
   ////////////////////////////////////////////
@@ -57,23 +53,23 @@ class HugoElasticsearch {
 
   setInput (input) {
     this.input = input;
-  };
+  }
 
   setOutput (output) {
     this.output = output;
-  };
+  }
 
   setLanguage (language) {
     this.language = language;
-  };
+  }
 
   setDelimiter (delimiter) {
     this.delimiter = delimiter;
-  };
+  }
 
   setIndexName (indexName) {
     this.indexName = indexName;
-  };
+  }
 
   setLanguageConfig (language, delimiter) {
     switch (true) {
@@ -94,7 +90,7 @@ class HugoElasticsearch {
         };
         break;
     }
-  };
+  }
 
   setIndexMetaId (id) {
     this.indexMeta.index._id = id || this.id++;
@@ -107,7 +103,10 @@ class HugoElasticsearch {
   writeIndexStream (input, output, indexMeta) {
     this.id = 1;
     this.list = [];
+    this.baseDir = path.dirname(this.input);
 
+    if (this.indexName) this.setIndexMetaIndex(this.indexName);
+    this.setLanguageConfig(this.language, this.delimiter);
     this.readInputDirectory(input);
     this.createOutputDirectory(output);
 
@@ -139,7 +138,7 @@ class HugoElasticsearch {
       const stats = fs.lstatSync(file);
       if (!stats.isDirectory()) this.readInputFile(file);
     }
-  };
+  }
 
   readInputFile (filePath) {
     const ext = path.extname(filePath);
@@ -164,11 +163,11 @@ class HugoElasticsearch {
     if (meta.data.url) uri = meta.data.url;
 
     this.list.push({uri, title, content, tags});
-  };
+  }
 
   index () {
     this.writeIndexStream(this.input, this.output, this.indexMeta);
-  };
+  }
 
 }
 
