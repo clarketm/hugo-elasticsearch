@@ -1,4 +1,4 @@
-# Hugo-Elasticsearch (HES)
+# [Hugo-Elasticsearch (HES)](https://www.npmjs.com/package/hugo-elasticsearch)
 
 Generate [Elasticsearch](https://www.elastic.co/products/elasticsearch) indexes for [Hugo](https://gohugo.io/) static sites by parsing front matter.
 
