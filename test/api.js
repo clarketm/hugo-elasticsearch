@@ -32,7 +32,7 @@ Indexer.index();
 Indexer.setInput('content/test-yaml.md');
 Indexer.setOutput('public/elasticsearch-api-yaml.json');
 Indexer.setLanguage('yaml');
-Indexer.setDelimiter('+++');
+Indexer.setDelimiter('---');
 Indexer.setIndexName('posts');
 Indexer.index();
 
@@ -40,5 +40,6 @@ Indexer.index();
 Indexer.setInput('content/test-toml.md');
 Indexer.setOutput('public/elasticsearch-api-toml.json');
 Indexer.setLanguage('toml');
+Indexer.setDelimiter('+++');
 Indexer.setIndexName('posts');
 Indexer.index();
