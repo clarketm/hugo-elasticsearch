@@ -5,14 +5,14 @@ Generate [Elasticsearch](https://www.elastic.co/products/elasticsearch) indexes 
 ## Installation
 
 ### Install with npm
-```shell
+```bash
 $ npm install hugo-elasticsearch
 ```
 
 ## Usage
 
 ### CLI
-```shell
+```bash
 
 NAME:
     hugo-elasticsearch
@@ -43,6 +43,7 @@ EXAMPLES:
     -i "content/**" \
     -o "public/elasticsearch.json" \
     -l "toml"
+    
 ```
 
 ### NPM Scripts
