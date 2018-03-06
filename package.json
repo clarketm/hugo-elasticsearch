@@ -2,17 +2,17 @@
   "name": "hugo-elasticsearch",
   "version": "1.0.0",
   "description": "Generate elasticsearch indices for Hugo static sites by parsing front matter.",
-  "main": "./dist/lib/hes.js",
+  "main": "./lib/hes.js",
   "bin": {
-    "hes": "./dist/bin/hes.js",
-    "hugo-elasticsearch": "./dist/bin/hes.js"
+    "hes": "./bin/hes.js",
+    "hugo-elasticsearch": "./bin/hes.js"
   },
   "directories": {
-    "lib": "./dist/lib"
+    "lib": "./lib"
   },
   "scripts": {
     "index": "hes -i './content/**' -o './public/elasticsearch.json' -l 'toml' -d '+++'",
-    "build": "shx rm -rf ./dist ; babel ./src --out-dir ./dist",
+    "build": "shx rm -rf ./bin ./lib ; babel ./src --out-dir ./",
     "lint": "eslint --fix ./src",
     "test:yaml": "hes -i './content/test-yaml.md' -o './public/elasticsearch-yaml.json' -l 'yaml' -d '---'",
     "test:toml": "hes -i './content/test-toml.md' -o './public/elasticsearch-toml.json' -l 'toml' -d '+++'",
