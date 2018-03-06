@@ -1,0 +1,50 @@
+{
+  "name": "hugo-elasticsearch",
+  "version": "1.0.0",
+  "description": "Generate elasticsearch indices for Hugo static sites by parsing front matter.",
+  "main": "./dist/lib/hes.js",
+  "bin": {
+    "hes": "./dist/bin/hes.js",
+    "hugo-elasticsearch": "./dist/bin/hes.js"
+  },
+  "directories": {
+    "lib": "./dist/lib"
+  },
+  "scripts": {
+    "index": "hes -i './content/**' -o './public/elasticsearch.json' -l 'toml' -d '+++'",
+    "build": "shx rm -rf ./dist ; babel ./src --out-dir ./dist",
+    "lint": "eslint --fix ./src",
+    "test:yaml": "hes -i './content/test-yaml.md' -o './public/elasticsearch-yaml.json' -l 'yaml' -d '---'",
+    "test:toml": "hes -i './content/test-toml.md' -o './public/elasticsearch-toml.json' -l 'toml' -d '+++'",
+    "test:api": "test/api.js",
+    "pretest": "npm run build",
+    "test": "shx rm -rf ./public ; npm run test:yaml ; npm run test:toml ; npm run test:api"
+  },
+  "keywords": [
+    "elasticsearch",
+    "hugo",
+    "index",
+    "indexer",
+    "toml",
+    "yaml"
+  ],
+  "author": "Travis Clarke <travis.m.clarke@gmail.com> (https://www.travismclarke.com/)",
+  "repository": "clarketm/hugo-elasticsearch",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "glob": "^7.1.2",
+    "gray-matter": "^3.0.2",
+    "minimist": "^1.2.0",
+    "remove-markdown": "^0.2.0",
+    "striptags": "^3.0.1",
+    "toml": "^2.3.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.18.2",
+    "shx": "^0.2.2"
+  }
+}
