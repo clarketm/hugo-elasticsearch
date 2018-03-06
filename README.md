@@ -12,38 +12,37 @@ $ npm install hugo-elasticsearch
 ## Usage
 
 ### CLI
-```bash
-##############################################################################################
-# Command
-##############################################################################################
-# hugo-elasticsearch | hes
+```shell
 
-##############################################################################################
-# Options
-##############################################################################################
-# -i | --input        input [path]                          (default: "content/**")
-# -o | --output       output [path]                         (default: "public/elasticsearch.json")
-# -l | --language     language [toml | yaml]                (default: "toml")
-# -d | --delimiter    delimiter [toml: +++ | yaml: ---]     (optional)
-# -n | --name         index name [string]                   (optional)
-```
+NAME:
+    hugo-elasticsearch
+    hes (alias)
 
-```bash
-##############################################################################################
-# Examples
-##############################################################################################
+SYNOPSIS:
+    hes [ opts... ]
 
-# Long form (defaults)
-$ hugo-elasticsearch \
-> --input "content/**" \
-> --output "public/elasticsearch.json" \
-> --language "toml"
+DESCRIPTION:
+    Generate Elasticsearch indexes from Hugo front matter.
 
-# Short form (defaults)
-$ hes \
-> -i "content/**" \
-> -o "public/elasticsearch.json" \
-> -l "toml"
+OPTIONS:
+    -i, --input path            Input path.                         (default: "content/**")
+    -o, --output path           Output path.                        (default: "public/elasticsearch.json")
+    -l, --language lang         Language [toml | yaml].             (default: "toml")
+    -d, --delimiter delim       Delimiter [toml: +++ | yaml: ---].  (optional)
+    -n, --name name             Index name.                         (optional)
+
+EXAMPLES:
+    # Long form (defaults)
+    $ hugo-elasticsearch \
+    --input "content/**" \
+    --output "public/elasticsearch.json" \
+    --language "toml"
+
+    # Short form (defaults)
+    $ hes \
+    -i "content/**" \
+    -o "public/elasticsearch.json" \
+    -l "toml"
 ```
 
 ### NPM Scripts
@@ -57,9 +56,6 @@ $ hes \
 ...
 ```
 
-```shell
-$ npm run index
-```
 
 ### API
 ```javascript
