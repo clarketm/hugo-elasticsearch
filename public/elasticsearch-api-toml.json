@@ -1,0 +1,3 @@
+{"index":{"_index":"posts","_id":1}}
+{"uri":"/test-toml","content":"+++\ntitle = \"Sample title\"\ndescription = \"Sample description\"\ntags = [ \"tag1\" ]\n+++\n\nSample content header\nSample content body","tags":[]}
+
