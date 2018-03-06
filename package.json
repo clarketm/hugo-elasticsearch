@@ -17,6 +17,7 @@
     "test:yaml": "hes -i './content/test-yaml.md' -o './public/elasticsearch-yaml.json' -l 'yaml' -d '---'",
     "test:toml": "hes -i './content/test-toml.md' -o './public/elasticsearch-toml.json' -l 'toml' -d '+++'",
     "test:api": "test/api.js",
+    "prepublish": "npm run build",
     "pretest": "npm run build",
     "test": "shx rm -rf ./public ; npm run test:yaml ; npm run test:toml ; npm run test:api"
   },
