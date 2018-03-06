@@ -1,3 +1,3 @@
 {"index":{"_index":"posts","_id":1}}
-{"uri":"/test-yaml","title":"Sample title","content":"\nSample content header\nSample content body","tags":["tag1"]}
+{"uri":"/test-yaml","content":"\ntitle: \"Sample title\"\ndescription: \"Sample description\"\ntags:\ntag1\n\nSample content header\nSample content body","tags":[]}
 
