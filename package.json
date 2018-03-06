@@ -1,6 +1,6 @@
 {
   "name": "hugo-elasticsearch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate elasticsearch indices for Hugo static sites by parsing front matter.",
   "main": "./lib/hes.js",
   "bin": {
@@ -32,6 +32,7 @@
   "repository": "clarketm/hugo-elasticsearch",
   "license": "Apache-2.0",
   "dependencies": {
+    "commander": "^2.14.1",
     "glob": "^7.1.2",
     "gray-matter": "^3.0.2",
     "minimist": "^1.2.0",
