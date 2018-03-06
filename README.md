@@ -38,7 +38,9 @@ OPTIONS:
 $ hugo-elasticsearch \
  --input "content/**" \
  --output "public/elasticsearch.json" \
- --language "toml"
+ --language "toml" \
+ --delimiter "+++" \
+ --index-name "posts"
 ```
 
 ##### Short form
@@ -46,7 +48,9 @@ $ hugo-elasticsearch \
 $ hes \
  -i "content/**" \
  -o "public/elasticsearch.json" \
- -l "toml"
+ -l "toml" \
+ -d "+++" \
+ -n "posts"
 ```
 
 ### NPM Scripts
