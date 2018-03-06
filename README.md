@@ -31,19 +31,22 @@ OPTIONS:
     -d, --delimiter delim       Delimiter [toml: +++ | yaml: ---].  (optional)
     -n, --name name             Index name.                         (optional)
 
-EXAMPLES:
-    # Long form (defaults)
-    $ hugo-elasticsearch \
-    --input "content/**" \
-    --output "public/elasticsearch.json" \
-    --language "toml"
+```
 
-    # Short form (defaults)
-    $ hes \
-    -i "content/**" \
-    -o "public/elasticsearch.json" \
-    -l "toml"
-    
+##### Long form
+```bash
+$ hugo-elasticsearch \
+ --input "content/**" \
+ --output "public/elasticsearch.json" \
+ --language "toml"
+```
+
+##### Short form
+```bash
+$ hes \
+ -i "content/**" \
+ -o "public/elasticsearch.json" \
+ -l "toml"
 ```
 
 ### NPM Scripts
