@@ -26,4 +26,5 @@ jobs:
             - node_modules
           key: dependencies-{{ checksum "yarn.lock" }}
 
+      - run: yarn link
       - run: yarn test
