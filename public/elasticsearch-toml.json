@@ -1,3 +1,3 @@
 {"index":{"_id":1}}
-{"uri":"/test-toml","title":"Sample title","content":"\nSample content header\nSample content body","tags":["tag1"]}
+{"title":"Sample title","description":"Sample description","tags":["tag1"],"uri":"/test-toml","content":"\nSample content header\nSample content body"}
 
