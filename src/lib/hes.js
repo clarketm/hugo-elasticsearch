@@ -147,7 +147,6 @@ class HugoElasticsearch {
     // Check if is a draft
     if (meta.data.draft) return;
 
-    const title = meta.data.title;
     const tags = meta.data.tags || [];
     let content;
 
@@ -162,7 +161,7 @@ class HugoElasticsearch {
 
     if (meta.data.url) uri = meta.data.url;
 
-    this.list.push({uri, title, content, tags});
+    this.list.push({...meta.data, uri, content, tags});
   }
 
   index () {
