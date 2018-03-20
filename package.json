@@ -17,9 +17,20 @@
     "test:yaml": "hes -i './content/test-yaml.md' -o './public/elasticsearch-yaml.json' -l 'yaml' -d '---'",
     "test:toml": "hes -i './content/test-toml.md' -o './public/elasticsearch-toml.json' -l 'toml' -d '+++'",
     "test:api": "test/api.js",
-    "prepublish": "npm run build",
-    "pretest": "npm run build",
-    "test": "shx rm -rf ./public ; npm run test:yaml ; npm run test:toml ; npm run test:api"
+    "bump": "yarn test && yarn lint && yarn version",
+    "pretest": "yarn build",
+    "test": "shx rm -rf ./public ; yarn test:yaml ; yarn test:toml ; yarn test:api"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "keywords": [
     "elasticsearch",
@@ -48,6 +59,8 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.18.2",
+    "husky": "^0.15.0-rc.9",
+    "lint-staged": "^7.0.0",
     "shx": "^0.2.2"
   }
 }
