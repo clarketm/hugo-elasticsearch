@@ -11,7 +11,10 @@ var _commander2 = _interopRequireDefault(_commander);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_commander2.default.version('1.0.1').option('-i, --input path', 'Input path.', 'content/**').option('-o, --output path', 'Output path.', 'public/elasticsearch.json').option('-l, --language lang', 'Language [toml | yaml].', 'toml').option('-d, --delimiter delim', 'Delimiter [toml: +++ | yaml: ---].  (optional)').option('-n, --index-name name', 'Index name. (optional)').parse(process.argv);
+var _require = require('../package.json'),
+    version = _require.version;
+
+_commander2.default.version(version).option('-i, --input [path]', 'Input path.', 'content/**').option('-o, --output [path]', 'Output path.', 'public/elasticsearch.json').option('-l, --language [lang]', 'Language [toml | yaml].', 'toml').option('-d, --delimiter [delim]', 'Delimiter [toml: +++ | yaml: ---].  (optional)').option('-n, --index-name [name]', 'Index name. (optional)').parse(process.argv);
 
 var input = _commander2.default.input,
     output = _commander2.default.output,
