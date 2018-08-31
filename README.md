@@ -140,8 +140,9 @@ $ curl \
 
 4. You content is now successfully indexed in Elasticsearch 👍. Happy elastic searching!
 
-> Refer to the `content` directory in the root of *this* project for examples of both *yaml* and *toml* content (i.e. `.md` files).
-> Refer to the `public` directory in the root of *this* project for examples of ndjson files (i.e. Elasticsearch index files) generated from both *yaml* and *toml* content.
+> Refer to the [`content`](content) directory in the root of *this* project for examples of both *yaml* and *toml* content (i.e. `.md` files).
+
+> Refer to the [`public`](public) directory in the root of *this* project for examples of ndjson files (i.e. Elasticsearch index files) generated from both *yaml* and *toml* content.
 
 ## Sites using hugo-elasticsearch
 * https://blog.travismclarke.com/
