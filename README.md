@@ -92,6 +92,57 @@ Indexer.setDelimiter('---');
 Indexer.setIndexName('posts');
 ```
 
+## Example
+
+1. Create a markdown file with `toml` front matter in a directory named `content`.
+```bash
+$ touch 'content/test-toml.md'
+```
+
+```markdown
++++
+title = "Sample title"
+description = "Sample description"
+tags = [ "tag1" ]
++++
+
+# Sample content header
+Sample content body
+```
+
+2. Generate an newline delimited json file for indexing in Elasticsearch and output it to a file named `public/elasticsearch.json`.
+```bash
+$ hes -i 'content/**' -o 'public/elasticsearch.json'
+```
+
+3. [Bulk](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html) upload your json file to a running Elasticsearch instance.
+```bash
+$ HOST="localhost"
+$ PORT="9200"
+$ INDEX="index"
+$ TYPE="type"
+
+$ curl \
+  -H "Content-Type: application/x-ndjson" \
+  -XPOST "$HOST:$PORT/$INDEX/$type/_bulk" \
+  --data-binary "@./public/elasticsearch.json"
+```
+
+```json
+{
+  "took": 137,
+  "errors": false,
+  "items": [
+    ...
+  ]
+}
+```
+
+4. You content is now successfully indexed in Elasticsearch 👍. Happy elastic searching!
+
+> Refer to the `content` directory in the root of *this* project for examples of both *yaml* and *toml* content (i.e. `.md` files).
+> Refer to the `public` directory in the root of *this* project for examples of ndjson files (i.e. Elasticsearch index files) generated from both *yaml* and *toml* content.
+
 ## Sites using hugo-elasticsearch
 * https://blog.travismclarke.com/
 
