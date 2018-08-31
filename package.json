@@ -1,6 +1,6 @@
 {
   "name": "hugo-elasticsearch",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Generate elasticsearch indices for Hugo static sites by parsing front matter.",
   "main": "./lib/hes.js",
   "bin": {
