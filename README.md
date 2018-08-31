@@ -124,7 +124,7 @@ $ TYPE="type"
 
 $ curl \
   -H "Content-Type: application/x-ndjson" \
-  -XPOST "$HOST:$PORT/$INDEX/$type/_bulk" \
+  -XPOST "$HOST:$PORT/$INDEX/$TYPE/_bulk" \
   --data-binary "@./public/elasticsearch.json"
 ```
 
