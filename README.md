@@ -91,3 +91,9 @@ Indexer.setLanguage('yaml');
 Indexer.setDelimiter('---');
 Indexer.setIndexName('posts');
 ```
+
+## Sites using hugo-elasticsearch
+* https://blog.travismclarke.com/
+
+## License
+Apache-2.0 © [Travis Clarke](https://www.travismclarke.com/)
