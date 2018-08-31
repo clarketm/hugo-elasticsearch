@@ -7,19 +7,27 @@
     "hes": "./bin/hes.js",
     "hugo-elasticsearch": "./bin/hes.js"
   },
+  "files": [
+    "bin",
+    "lib",
+    "README.md",
+    "LICENSE.txt"
+  ],
   "directories": {
+    "bin": "./bin",
     "lib": "./lib"
   },
   "scripts": {
-    "index": "hes -i './content/**' -o './public/elasticsearch.json' -l 'toml' -d '+++'",
+    "index": "node ./bin/hes -i './content/**' -o './public/elasticsearch.json' -l 'toml' -d '+++'",
     "build": "shx rm -rf ./bin ./lib ; babel ./src --out-dir ./",
-    "lint": "eslint --fix ./src",
-    "test:yaml": "hes -i './content/test-yaml.md' -o './public/elasticsearch-yaml.json' -l 'yaml' -d '---'",
-    "test:toml": "hes -i './content/test-toml.md' -o './public/elasticsearch-toml.json' -l 'toml' -d '+++'",
-    "test:api": "test/api.js",
-    "bump": "yarn test && yarn lint && yarn version",
+    "lint": "eslint --fix ./src ./test",
+    "prettier": "prettier --write '**/*.js'",
     "pretest": "yarn build",
-    "test": "shx rm -rf ./public ; yarn test:yaml ; yarn test:toml ; yarn test:api"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "prep": "yarn lint && yarn prettier && yarn test",
+    "prepublishOnly": "yarn prep && bash ./publish.sh"
   },
   "husky": {
     "hooks": {
@@ -41,7 +49,8 @@
     "yaml"
   ],
   "author": "Travis Clarke <travis.m.clarke@gmail.com> (https://www.travismclarke.com/)",
-  "repository": "clarketm/hugo-elasticsearch",
+  "repository": "github:clarketm/hugo-lunr-elasticsearch",
+  "homepage": "https://github.com/clarketm/hugo-lunr-elasticsearch#readme",
   "license": "Apache-2.0",
   "dependencies": {
     "commander": "^2.14.1",
@@ -53,6 +62,8 @@
     "toml": "^2.3.2"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "@types/shelljs": "^0.8.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-polyfill": "^6.26.0",
@@ -60,7 +71,12 @@
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.18.2",
     "husky": "^0.15.0-rc.9",
+    "jest": "^23.5.0",
     "lint-staged": "^7.0.0",
-    "shx": "^0.2.2"
+    "mock-fs": "^4.6.0",
+    "prettier": "^1.14.2",
+    "shelljs": "^0.8.2",
+    "shx": "^0.2.2",
+    "yeoman-assert": "^3.1.1"
   }
 }
