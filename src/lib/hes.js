@@ -108,8 +108,13 @@ class HugoElasticsearch {
     if (this.indexName) this.setIndexMetaIndex(this.indexName);
     this.setLanguageConfig(this.language, this.delimiter);
     this.readInputDirectory(input);
-    this.createOutputDirectory(output);
 
+    if (this.list.length <= 0) {
+      global.console.error(`No content found for specified input path: "${this.input}"`);
+      global.process.exit(1);
+    }
+
+    this.createOutputDirectory(output);
     this.stream = fs.createWriteStream(output);
     for (let i = 0; i < this.list.length; i++) {
       this.setIndexMetaId();
