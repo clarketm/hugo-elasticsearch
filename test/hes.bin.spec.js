@@ -2,8 +2,28 @@ const fs = require("fs");
 const assert = require("yeoman-assert");
 const shell = require("shelljs");
 
+global.console.error = jest.fn(i => i);
+global.process.exit = jest.fn();
+
 describe("hes bin", () => {
   const root = fs.realpathSync(process.cwd());
+
+  describe("#hes", () => {
+    beforeAll(() => {
+      shell.exec(`node "${root}/bin/hes.js" -i "${root}/invalid/path/to/content" -o "${root}/public/invalid.json"`);
+    });
+
+    it("should not create `output` file if content not found for `input` path", () => {
+      assert.noFile(`${root}/public/invalid.json`);
+    });
+
+    it("should print an error message to the console", () => {
+      expect(global.console.error).toHaveBeenCalled();
+      expect(global.console.error).toHaveReturnedWith(
+        `exec: No content found for specified input path: "${root}/invalid/path/to/content"\n`
+      );
+    });
+  });
 
   describe("#hes (-i, -o, -l, -d) ~ yaml", () => {
     beforeAll(() => {

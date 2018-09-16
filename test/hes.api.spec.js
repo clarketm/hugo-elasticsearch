@@ -1,6 +1,9 @@
 const fs = require("fs");
 const mockfs = require("mock-fs");
 
+global.console.error = jest.fn();
+global.process.exit = jest.fn();
+
 describe("hes api", () => {
   const root = fs.realpathSync(process.cwd());
   const hes = require(root);
