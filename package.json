@@ -1,6 +1,6 @@
 {
   "name": "hugo-elasticsearch",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Generate elasticsearch indices for Hugo static sites by parsing front matter.",
   "main": "./lib/hes.js",
   "bin": {
@@ -49,8 +49,8 @@
     "yaml"
   ],
   "author": "Travis Clarke <travis.m.clarke@gmail.com> (https://www.travismclarke.com/)",
-  "repository": "github:clarketm/hugo-lunr-elasticsearch",
-  "homepage": "https://github.com/clarketm/hugo-lunr-elasticsearch#readme",
+  "repository": "github:clarketm/hugo-elasticsearch",
+  "homepage": "https://github.com/clarketm/hugo-elasticsearch#readme",
   "license": "Apache-2.0",
   "dependencies": {
     "commander": "^2.14.1",
