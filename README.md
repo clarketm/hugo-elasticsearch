@@ -9,7 +9,7 @@ Generate [Elasticsearch](https://www.elastic.co/products/elasticsearch) indexes 
 <br>
 <br>
 <a href="https://github.com/clarketm/hugo-elasticsearch">
-  <p align="center"><img width="20%" src="/hero.png" /></p>
+  <p align="center"><img width="40%" src="/hero.png" /></p>
 </a>
 
 ## Installation
