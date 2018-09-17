@@ -1,4 +1,4 @@
-# [Hugo-Elasticsearch (HES)](https://www.npmjs.com/package/hugo-elasticsearch)
+# [Hugo-Elasticsearch (HES)](https://blog.travismclarke.com/project/hugo-elasticsearch/)
 
 [![npm-badge](https://img.shields.io/npm/v/hugo-elasticsearch.svg)](https://www.npmjs.com/package/hugo-elasticsearch)
 [![codacy-badge](https://api.codacy.com/project/badge/Grade/1ce2505fd16c4e5ab284c7b36b666a08)](https://www.codacy.com/app/clarketm/hugo-elasticsearch?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=clarketm/hugo-elasticsearch&amp;utm_campaign=Badge_Grade)
@@ -8,7 +8,7 @@ Generate [Elasticsearch](https://www.elastic.co/products/elasticsearch) indexes 
 
 <br>
 <br>
-<a href="https://github.com/clarketm/hugo-elasticsearch">
+<a href="https://blog.travismclarke.com/project/hugo-elasticsearch/">
   <p align="center"><img width="40%" src="/hero.png" /></p>
 </a>
 
