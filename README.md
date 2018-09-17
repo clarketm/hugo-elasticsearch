@@ -6,6 +6,12 @@
 
 Generate [Elasticsearch](https://www.elastic.co/products/elasticsearch) indexes for [Hugo](https://gohugo.io/) static sites by parsing front matter.
 
+<br>
+<br>
+<a href="https://github.com/clarketm/hugo-elasticsearch">
+  <p align="center"><img width="20%" src="/hero.png" /></p>
+</a>
+
 ## Installation
 
 ### Install with npm
