@@ -5,7 +5,6 @@ import toml from "toml";
 import removeMd from "remove-markdown";
 import striptags from "striptags";
 import path from "path";
-import minimalist from "minimist";
 
 class HugoElasticsearch {
   ////////////////////////////////////////////
@@ -13,8 +12,6 @@ class HugoElasticsearch {
   ////////////////////////////////////////////
 
   constructor(config = {}) {
-    const argv = minimalist(process.argv.slice(2));
-
     this.indexMeta = { index: {} };
 
     // DEFAULTS
@@ -22,27 +19,7 @@ class HugoElasticsearch {
     this.output = config.output || "public/elasticsearch.json";
     this.language = config.language || "toml";
     this.delimiter = config.delimiter;
-    this.indexName = config.indexName; // 'posts';
-
-    // Input
-    if (argv["i"]) this.setInput(argv["i"]);
-    if (argv["input"]) this.setInput(argv["input"]);
-
-    // Output
-    if (argv["o"]) this.setOutput(argv["o"]);
-    if (argv["output"]) this.setOutput(argv["output"]);
-
-    // Language
-    if (argv["l"]) this.setLanguage(argv["l"]);
-    if (argv["language"]) this.setLanguage(argv["language"]);
-
-    // Delimiter
-    if (argv["d"]) this.setDelimiter(argv["d"]);
-    if (argv["delimiter"]) this.setDelimiter(argv["delimiter"]);
-
-    // Index Name
-    if (argv["n"]) this.setIndexName(argv["n"]);
-    if (argv["name"]) this.setIndexName(argv["name"]);
+    this.indexName = config.indexName;
   }
 
   ////////////////////////////////////////////
