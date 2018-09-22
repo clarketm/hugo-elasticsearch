@@ -127,7 +127,7 @@ $ hes -i 'content/**' -o 'public/elasticsearch.json'
 
 4. [Bulk](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html) upload your json file to a running Elasticsearch instance.
 
-#### a. [cURL](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html)
+**[cURL](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html)**
 ```bash
 $ HOST="localhost"
 $ PORT="9200"
@@ -150,7 +150,7 @@ $ curl \
 }
 ```
 
-#### b. [JavaScript](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-bulk)
+**[JavaScript](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-bulk)**
 ```js
 const Elastic = require("elasticsearch");
 const ndjson = require("ndjson");
@@ -177,12 +177,10 @@ const bulkUpload = async () => {
 };
 ```
 
+**[Java](https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/index.html), [Python](https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/index.html), [Ruby](https://www.elastic.co/guide/en/elasticsearch/client/ruby-api/current/index.html), ...**
 > Although the bulk upload examples above are only for cUrl and JavaScript, this format will work seamlessly with **any** one of the *numerous* Elasticsearch [clients](https://www.elastic.co/guide/en/elasticsearch/client/index.html).
 
-#### Response
-
-
-4. You content is now successfully indexed in Elasticsearch 👍. Happy elastic searching!
+5. You content is now successfully indexed in Elasticsearch 👍. Happy elastic searching!
 
 > Refer to the [`content`](content) directory in the root of *this* project for examples of both *yaml* and *toml* content (i.e. `.md` files).
 
