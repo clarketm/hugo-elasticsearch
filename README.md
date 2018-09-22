@@ -100,12 +100,12 @@ Indexer.setIndexName('posts');
 
 ## Example
 
-1. Create a directory named `content`.
+### 1. Create a directory named `content`.
 ```bash
 $ mkdir 'content'
 ```
 
-2. Create a markdown file with `toml` front matter in a file named `content/test-toml.md`.
+### 2. Create a markdown file with `toml` front matter in a file named `content/test-toml.md`.
 ```markdown
 
 $ echo '
@@ -120,12 +120,12 @@ Sample content body
 ' > 'content/test-toml.md'
 ```
 
-3. Generate a newline delimited json file for indexing in Elasticsearch and output it to a file named `public/elasticsearch.json`.
+### 3. Generate a newline delimited json file for indexing in Elasticsearch and output it to a file named `public/elasticsearch.json`.
 ```bash
 $ hes -i 'content/**' -o 'public/elasticsearch.json'
 ```
 
-4. [Bulk](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html) upload your json file to a running Elasticsearch instance.
+### 4. [Bulk](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html) upload your json file to a running Elasticsearch instance.
 
 **[cURL](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html)**
 ```bash
@@ -180,7 +180,7 @@ const bulkUpload = async () => {
 **[Java](https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/index.html), [Python](https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/index.html), [Ruby](https://www.elastic.co/guide/en/elasticsearch/client/ruby-api/current/index.html), ...**
 > Although the bulk upload examples above are only for cUrl and JavaScript, this format will work seamlessly with **any** one of the *numerous* Elasticsearch [clients](https://www.elastic.co/guide/en/elasticsearch/client/index.html).
 
-5. You content is now successfully indexed in Elasticsearch 👍. Happy elastic searching!
+### 5. You content is now successfully indexed in Elasticsearch 👍. Happy elastic searching!
 
 > Refer to the [`content`](content) directory in the root of *this* project for examples of both *yaml* and *toml* content (i.e. `.md` files).
 
