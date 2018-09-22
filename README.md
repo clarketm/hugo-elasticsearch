@@ -126,6 +126,8 @@ $ hes -i 'content/**' -o 'public/elasticsearch.json'
 ```
 
 4. [Bulk](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html) upload your json file to a running Elasticsearch instance.
+
+#### a. [cURL](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html)
 ```bash
 $ HOST="localhost"
 $ PORT="9200"
@@ -147,6 +149,38 @@ $ curl \
   ]
 }
 ```
+
+#### b. [JavaScript](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-bulk)
+```js
+const Elastic = require("elasticsearch");
+const ndjson = require("ndjson");
+const fs = require("fs");
+
+const client = new Elastic.Client({host: 'localhost:9200'});
+
+const fetchBulkJson = () => {
+    return new Promise((resolve, reject) => {
+      let lines = [];
+
+      fs.createReadStream("./public/elasticsearch.json")
+        .pipe(ndjson.parse())
+        .on("data", line => lines.push(line))
+        .on("end", () => resolve(lines))
+        .on("error", err => reject(err));
+    });
+};
+
+// Perform the bulk index operations in a single API call.
+const bulkUpload = async () => {
+    const json = await this.fetchBulkJson();
+    return await client.bulk({ body: json });
+};
+```
+
+> Although the bulk upload examples above are only for cUrl and JavaScript, this format will work seamlessly with **any** one of the *numerous* Elasticsearch [clients](https://www.elastic.co/guide/en/elasticsearch/client/index.html).
+
+#### Response
+
 
 4. You content is now successfully indexed in Elasticsearch 👍. Happy elastic searching!
 
