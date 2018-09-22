@@ -100,12 +100,15 @@ Indexer.setIndexName('posts');
 
 ## Example
 
-1. Create a markdown file with `toml` front matter in a directory named `content`.
+1. Create a directory named `content`.
 ```bash
-$ touch 'content/test-toml.md'
+$ mkdir 'content'
 ```
 
+2. Create a markdown file with `toml` front matter in a file named `content/test-toml.md`.
 ```markdown
+
+$ echo '
 +++
 title = "Sample title"
 description = "Sample description"
@@ -114,14 +117,15 @@ tags = [ "tag1" ]
 
 # Sample content header
 Sample content body
+' > 'content/test-toml.md'
 ```
 
-2. Generate an newline delimited json file for indexing in Elasticsearch and output it to a file named `public/elasticsearch.json`.
+3. Generate a newline delimited json file for indexing in Elasticsearch and output it to a file named `public/elasticsearch.json`.
 ```bash
 $ hes -i 'content/**' -o 'public/elasticsearch.json'
 ```
 
-3. [Bulk](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html) upload your json file to a running Elasticsearch instance.
+4. [Bulk](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html) upload your json file to a running Elasticsearch instance.
 ```bash
 $ HOST="localhost"
 $ PORT="9200"
