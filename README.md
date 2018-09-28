@@ -19,6 +19,10 @@ Generate [Elasticsearch](https://www.elastic.co/products/elasticsearch) indexes 
 $ npm install hugo-elasticsearch
 ```
 
+## Demo
+
+![usage demo](https://github.com/clarketm/hugo-elasticsearch/blob/master/usage.gif)
+
 ## Usage
 
 ### CLI
@@ -107,9 +111,7 @@ $ mkdir 'content'
 
 #### 2. Create a markdown file with `toml` front matter in a file named `content/test-toml.md`.
 ```markdown
-
-$ echo '
-+++
+$ echo '+++
 title = "Sample title"
 description = "Sample description"
 tags = [ "tag1" ]
