@@ -111,7 +111,8 @@ $ mkdir 'content'
 
 #### 2. Create a markdown file with `toml` front matter in a file named `content/test-toml.md`.
 ```markdown
-$ echo '+++
+$ cat > 'content/test-toml.md' <<EOF
++++
 title = "Sample title"
 description = "Sample description"
 tags = [ "tag1" ]
@@ -119,7 +120,8 @@ tags = [ "tag1" ]
 
 # Sample content header
 Sample content body
-' > 'content/test-toml.md'
+
+EOF
 ```
 
 #### 3. Generate a newline delimited json file for indexing in Elasticsearch and output it to a file named `public/elasticsearch.json`.
