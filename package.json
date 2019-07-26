@@ -58,7 +58,7 @@
     "gray-matter": "^4.0.1",
     "remove-markdown": "^0.3.0",
     "striptags": "^3.1.1",
-    "toml": "^2.3.3"
+    "toml": "^3.0.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
