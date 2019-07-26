@@ -61,7 +61,7 @@
     "toml": "^2.3.3"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.1",
+    "@types/jest": "^24.0.15",
     "@types/shelljs": "^0.8.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
