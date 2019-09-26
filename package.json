@@ -71,7 +71,7 @@
     "eslint": "^4.18.2",
     "husky": "^0.15.0-rc.9",
     "jest": "^23.5.0",
-    "lint-staged": "^7.0.0",
+    "lint-staged": "^9.4.0",
     "mock-fs": "^4.7.0",
     "prettier": "^1.14.2",
     "shelljs": "^0.8.2",
