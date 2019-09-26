@@ -53,7 +53,7 @@
   "homepage": "https://github.com/clarketm/hugo-elasticsearch#readme",
   "license": "Apache-2.0",
   "dependencies": {
-    "commander": "^2.14.1",
+    "commander": "^3.0.2",
     "glob": "^7.1.2",
     "gray-matter": "^4.0.1",
     "remove-markdown": "^0.3.0",
